@@ -12,8 +12,10 @@ class Form extends Component {
   }
 
   handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault() // Prevent the default behaviour of form
     this.props.addTodo(this.state)
+
+    //Resets the input field 
     this.setState(
       {
         content:''
@@ -25,7 +27,10 @@ class Form extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>Add new todo: </label>
-          <input type="text" onChange={this.handleChange}  value={this.state.content}/>
+          <input 
+            type="text" 
+            onChange={this.handleChange}  
+            value={this.state.content}/>
         </form>
       </div>
     )
